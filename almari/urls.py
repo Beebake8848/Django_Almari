@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from ecommercer import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('about/',views.about,name='about'),
+    path('products/',views.products,name='products'),
+    path('contact/',views.contact,name='contact'),
+    path('sproduct/',views.sproduct,name='sproduct'),
+    path('login/',views.login,name='login'),
+    path('signup/',views.signup,name='signup'),
+    path('adminproduct/',views.adminproduct,name='adminproduct'),
+    path('base/',views.base,name='base'),
+    path('users/',views.users,name='users')
 ]
 

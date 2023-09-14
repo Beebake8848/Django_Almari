@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ecommercer.apps.EcommercerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,11 @@ WSGI_APPLICATION = 'almari.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Hexbazar',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
     }
 }
 
@@ -122,7 +127,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
-STATICFILES_DIR = [
-    BASE_DIR,"static"
+STATICFILES_DIRS = [
+    BASE_DIR/ 'static',
 ]
 
